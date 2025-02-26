@@ -102,7 +102,7 @@ export default function LandingPage() {
           variant: "outline",
           size: "md",
           className:
-            "self-start border border-blue-400/20 bg-gradient-to-r from-blue-400/20 via-blue-300/10 to-blue-800/10 transition-all hover:border-blue-400/40 hover:from-blue-400/30 hover:via-blue-300/20 hover:to-blue-800/20 rounded-lg",
+            "self-start border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent backdrop-blur-sm transition-all hover:border-primary/30 hover:from-primary/20 hover:via-primary/10 hover:to-transparent rounded-full shadow-sm",
           icon: <Sprout size={16} className="text-primary" />
         }}
         content={{
