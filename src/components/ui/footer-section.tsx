@@ -8,7 +8,7 @@ function Footerdemo() {
       <div className="container mx-auto px-4 pb-12 md:px-6 lg:px-8">
         <div className="mt-6 flex flex-col items-center justify-between gap-4 pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Sprout Recovery. All rights reserved.
+            © 2025 Sprout Recovery. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
             <a href="#privacy" className="transition-colors hover:text-primary">

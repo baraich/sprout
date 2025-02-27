@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
+import React from "react";
+import { Sidebar, SidebarContent, SidebarItem, SidebarTrigger } from "@/components/ui/sidebar";
 import {
   LayoutDashboard,
   UserCog,
@@ -24,78 +24,83 @@ export default function DashboardLayout({
       label: "Dashboard",
       href: "/dashboard",
       icon: (
-        <LayoutDashboard className="text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white h-5 w-5 flex-shrink-0 transition-colors" />
+        <LayoutDashboard className="text-neutral-600 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-primary h-5 w-5 flex-shrink-0 transition-colors duration-200" />
       ),
     },
     {
       label: "Profile",
       href: "/dashboard/profile",
       icon: (
-        <UserCog className="text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white h-5 w-5 flex-shrink-0 transition-colors" />
+        <UserCog className="text-neutral-600 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-primary h-5 w-5 flex-shrink-0 transition-colors duration-200" />
       ),
     },
     {
       label: "Settings",
       href: "/dashboard/settings",
       icon: (
-        <Settings className="text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white h-5 w-5 flex-shrink-0 transition-colors" />
+        <Settings className="text-neutral-600 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-primary h-5 w-5 flex-shrink-0 transition-colors duration-200" />
       ),
     },
     {
       label: "Logout",
       href: "/logout",
       icon: (
-        <LogOut className="text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white h-5 w-5 flex-shrink-0 transition-colors" />
+        <LogOut className="text-neutral-600 dark:text-neutral-300 group-hover:text-primary dark:group-hover:text-primary h-5 w-5 flex-shrink-0 transition-colors duration-200" />
       ),
     },
   ];
 
-  const [open, setOpen] = useState(false);
 
   return (
     <div
       className={cn(
-        "rounded-md flex flex-col md:flex-row bg-gray-50 dark:bg-neutral-900 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-800 overflow-hidden",
+        "rounded-lg flex flex-col md:flex-row bg-gray-50 dark:bg-neutral-900 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-800 overflow-hidden",
         "h-screen"
       )}
     >
-      <Sidebar open={open} setOpen={setOpen}>
-        <SidebarBody className="justify-between gap-10 bg-white dark:bg-neutral-950 border-r border-neutral-200 dark:border-neutral-800 shadow-lg min-w-[80px] w-[180px] transition-all duration-75 ease-linear">
+      <Sidebar>
+        <div className="flex items-center justify-between p-4">
+          <LogoIcon />
+          <SidebarTrigger className="md:hidden" />
+        </div>
+        <SidebarContent className="justify-between gap-10 bg-white dark:bg-neutral-950 border-r border-neutral-200 dark:border-neutral-800 shadow-lg">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-            <div className="flex justify-center py-4">
-              {open ? <LogoIcon /> : <LogoIcon />}
-            </div>
-            <div className="mt-8 flex flex-col gap-1.5">
+            <div className="mt-6 flex flex-col gap-2 px-3">
               {links.map((link, idx) => (
-                <SidebarLink
+                <SidebarItem
                   key={idx}
-                  link={link}
+                  href={link.href}
+                  icon={link.icon}
                   className={cn(
-                    "py-3 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-lg transition-colors",
+                    "py-2.5 px-4 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-lg transition-all duration-200 group",
                     pathname === link.href &&
-                      "bg-neutral-100 dark:bg-neutral-900"
+                      "bg-neutral-100 dark:bg-neutral-900 font-medium"
                   )}
-                />
+                >
+                  {link.label}
+                </SidebarItem>
               ))}
             </div>
           </div>
-        </SidebarBody>
+        </SidebarContent>
       </Sidebar>
       <div className="flex flex-1">
-        <div className="p-2 md:p-10 rounded-tl-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 flex flex-col gap-2 flex-1 w-full h-full">
+        <div className="p-4 md:p-8 rounded-tl-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 flex flex-col gap-4 flex-1 w-full h-full">
           {children}
         </div>
       </div>
     </div>
   );
 }
+
 const LogoIcon = () => {
   return (
     <Link
       href="/dashboard"
-      className="font-normal flex items-center text-sm py-2 px-1 relative z-20"
+      className="font-medium flex items-center gap-2 text-sm py-2 px-1 relative z-20 hover:opacity-80 transition-opacity"
     >
-      <Sprout className="h-6 w-6 text-emerald-600" />
+      <Sprout className="h-6 w-6 text-primary" />
+      <span className="text-foreground">Sprout</span>
     </Link>
   );
 };
