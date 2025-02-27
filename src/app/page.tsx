@@ -2,16 +2,17 @@
 import { Hero } from "@/components/blocks/hero";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { AnimatedGridPattern } from "@/components/ui/grid-pattern-background";
-import { Toggle } from "@/components/ui/toggle";
-import { ArrowRight, Moon, Sun, Sprout } from "lucide-react";
-import { useTheme } from "next-themes";
+import { ArrowRight, Sprout } from "lucide-react";
 import Link from "next/link";
 import { Feature } from "@/components/ui/feature-section-with-bento-grid";
 import { Footerdemo } from "@/components/ui/footer-section";
+import dynamic from "next/dynamic";
+
+const ThemeToggle = dynamic(
+  async () => await import("@/components/ui/theme-toggle")
+);
 
 export default function LandingPage() {
-  const { theme, setTheme } = useTheme();
-
   return (
     <main>
       <nav className="flex items-center justify-between py-8 px-4 md:px-8 lg:px-12 border-b">
@@ -30,18 +31,6 @@ export default function LandingPage() {
               Dashboard
             </Link>
             <Link
-              href={"/progress"}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Progress
-            </Link>
-            <Link
-              href={"/resources"}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Resources
-            </Link>
-            <Link
               href={"/community"}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -50,48 +39,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div>
-          <Toggle
-            variant="outline"
-            onPressedChange={() =>
-              setTheme(theme === "light" ? "dark" : "light")
-            }
-            pressed={theme === "dark"}
-            className="group size-9 rounded-none transition-none data-[state=on]:bg-transparent"
-          >
-            {theme === "dark" ? (
-              <>
-                <Sun
-                  size={16}
-                  strokeWidth={2}
-                  className="absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0"
-                  aria-hidden="true"
-                />
-                <Moon
-                  size={16}
-                  strokeWidth={2}
-                  className="shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100"
-                  aria-hidden="true"
-                />
-              </>
-            ) : (
-              <>
-                <Moon
-                  size={16}
-                  strokeWidth={2}
-                  className="shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100"
-                  aria-hidden="true"
-                />
-                <Sun
-                  size={16}
-                  strokeWidth={2}
-                  className="absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0"
-                  aria-hidden="true"
-                />
-              </>
-            )}
-          </Toggle>
-        </div>
+        <ThemeToggle />
       </nav>
 
       <div className="relative">
