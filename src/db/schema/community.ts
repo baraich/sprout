@@ -11,13 +11,20 @@ export const groups = pgTable("groups", {
 
   createdAt: timestamp().defaultNow(),
   updatedAt: timestamp().$onUpdateFn(() => sql`now()`),
-
-  topics: integer().references(() => topics.id),
 });
 
+export type Topic = typeof topics.$inferSelect;
 export const topics = pgTable("topics", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  questions: integer().references(() => questions.id),
+
+  title: varchar().notNull(),
+  description: varchar().notNull(),
+  replies: integer().notNull(),
+
+  createdAt: timestamp().defaultNow(),
+  updatedAt: timestamp().$onUpdateFn(() => sql`now()`),
+
+  groups: integer().references(() => groups.id),
 });
 
 export const questions = pgTable("community_questions", {
