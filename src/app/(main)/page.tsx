@@ -4,8 +4,6 @@ import { TestimonialsSection } from "@/components/blocks/testimonials-with-marqu
 import { AnimatedGridPattern } from "@/components/ui/grid-pattern-background";
 import { ArrowRight, Sprout } from "lucide-react";
 import { Feature } from "@/components/ui/feature-section-with-bento-grid";
-import Link from "next/link";
-import ThemeToggle from "@/components/ui/theme-toggle";
 
 export default function LandingPage() {
   return (

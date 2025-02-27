@@ -3,7 +3,6 @@
 import { Hero } from "@/components/blocks/hero";
 import { AnimatedGridPattern } from "@/components/ui/grid-pattern-background";
 import { Users, MessageCircle, Heart, Share2 } from "lucide-react";
-import { Feature } from "@/components/ui/feature-section-with-bento-grid";
 
 export default function CommunityPage() {
   return (
