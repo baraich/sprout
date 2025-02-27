@@ -3,45 +3,11 @@ import { Hero } from "@/components/blocks/hero";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { AnimatedGridPattern } from "@/components/ui/grid-pattern-background";
 import { ArrowRight, Sprout } from "lucide-react";
-import Link from "next/link";
 import { Feature } from "@/components/ui/feature-section-with-bento-grid";
-import { Footerdemo } from "@/components/ui/footer-section";
-import dynamic from "next/dynamic";
-
-const ThemeToggle = dynamic(
-  async () => await import("@/components/ui/theme-toggle")
-);
 
 export default function LandingPage() {
   return (
-    <main>
-      <nav className="flex items-center justify-between py-8 px-4 md:px-8 lg:px-12 border-b">
-        <div className="flex items-center gap-8">
-          <Link href={"/"} className="cursor-help">
-            <span className="font-bold text-xl flex items-center gap-2">
-              <Sprout size={20} className="text-primary" />
-              Sprout
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link
-              href={"/dashboard"}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href={"/community"}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Community
-            </Link>
-          </div>
-        </div>
-
-        <ThemeToggle />
-      </nav>
-
+    <>
       <div className="relative">
         <AnimatedGridPattern
           className="absolute inset-0 -z-10 opacity-50 dark:opacity-20"
@@ -127,8 +93,6 @@ export default function LandingPage() {
       <section className="py-24 px-4 md:px-8 lg:px-12">
         <Feature />
       </section>
-
-      <Footerdemo />
-    </main>
+    </>
   );
 }
