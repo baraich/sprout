@@ -114,7 +114,7 @@ export const SidebarContent = ({
   children,
   className,
 }: SidebarContentProps) => {
-  const { isOpen } = useSidebar();
+  const { isOpen, close } = useSidebar();
 
   return (
     <AnimatePresence mode="wait">
@@ -140,7 +140,7 @@ export const SidebarContent = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => useSidebar().close()}
+          onClick={() => close()}
         />
       )}
     </AnimatePresence>

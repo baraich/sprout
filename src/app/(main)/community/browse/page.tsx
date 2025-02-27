@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Group } from "@/db/schema/community";
-import { getGroups } from "@/lib/community.db";
 import { Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
