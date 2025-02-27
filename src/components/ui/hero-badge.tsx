@@ -57,6 +57,8 @@ export default function HeroBadge({
   );
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <BadgeWrapper
       {...wrapperProps}
       className={cn("group justify-start flex", href && "cursor-pointer")}

@@ -6,6 +6,8 @@ import { Toggle } from "@/components/ui/toggle";
 import { ArrowRight, Moon, Sun, Sprout } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { Feature } from "@/components/ui/feature-section-with-bento-grid";
+import { Footerdemo } from "@/components/ui/footer-section";
 
 export default function LandingPage() {
   const { theme, setTheme } = useTheme();
@@ -147,7 +149,8 @@ export default function LandingPage() {
             author: {
               name: "Sarah M.",
               handle: "6 Months Clean",
-              avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&auto=format&fit=crop",
+              avatar:
+                "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&auto=format&fit=crop",
             },
             text: "Sprout gave me the structure and support I needed to finally break free from my social media addiction. The progress tracking and community support made all the difference.",
           },
@@ -155,7 +158,8 @@ export default function LandingPage() {
             author: {
               name: "James L.",
               handle: "1 Year Milestone",
-              avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
+              avatar:
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
             },
             text: "The daily check-ins and milestone celebrations kept me motivated. I've been gaming-free for a year now, and I've never felt more present and connected with my family.",
           },
@@ -163,13 +167,20 @@ export default function LandingPage() {
             author: {
               name: "Emily R.",
               handle: "3 Months Progress",
-              avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop",
+              avatar:
+                "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop",
             },
             text: "The resources and community here helped me understand my triggers and develop healthy coping mechanisms. I'm finally taking control of my life again.",
           },
         ]}
         className="border-y marquee-enabled"
       />
+
+      <section className="py-24 px-4 md:px-8 lg:px-12">
+        <Feature />
+      </section>
+
+      <Footerdemo />
     </main>
   );
 }
