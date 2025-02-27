@@ -31,7 +31,7 @@ export default function CommunityPage() {
             description:
               "Join a supportive community of individuals on their recovery journey. Share experiences, find encouragement, and build meaningful connections in a safe, judgment-free space.",
             primaryAction: {
-              href: "/community/join",
+              href: "/community/browse",
               text: "Join Community",
               icon: (
                 <Users

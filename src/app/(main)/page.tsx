@@ -32,7 +32,7 @@ export default function LandingPage() {
             description:
               "Your personal companion in the journey to break free from addictions. Track your progress, celebrate milestones, and build lasting positive habits with our powerful, judgment-free platform.",
             primaryAction: {
-              href: "/signup",
+              href: "/community/browse",
               text: "Start Your Journey",
               icon: (
                 <Sprout
@@ -42,8 +42,8 @@ export default function LandingPage() {
               ),
             },
             secondaryAction: {
-              href: "/about",
-              text: "Learn More",
+              href: "/community/browse",
+              text: "Join Community",
               icon: (
                 <ArrowRight
                   size={16}
