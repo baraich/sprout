@@ -4,10 +4,12 @@ import { TestimonialsSection } from "@/components/blocks/testimonials-with-marqu
 import { AnimatedGridPattern } from "@/components/ui/grid-pattern-background";
 import { ArrowRight, Sprout } from "lucide-react";
 import { Feature } from "@/components/ui/feature-section-with-bento-grid";
+import Link from "next/link";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 export default function LandingPage() {
   return (
-    <>
+    <main>
       <div className="relative">
         <AnimatedGridPattern
           className="absolute inset-0 -z-10 opacity-50 dark:opacity-20"
@@ -93,6 +95,6 @@ export default function LandingPage() {
       <section className="py-24 px-4 md:px-8 lg:px-12">
         <Feature />
       </section>
-    </>
+    </main>
   );
 }
