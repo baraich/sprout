@@ -68,7 +68,7 @@ export default function CommunityBrowsePage() {
         {loading
           ? [...Array(6)].map((_, index) => <SkeletonCard key={index} />)
           : groups.map((group, index) => (
-              <Link key={index} href={`/community/group/${group.id}`}>
+              <Link key={index} href="/community">
                 <Card className="hover:shadow-lg transition-shadow duration-300 min-h-56 cursor-pointer hover:border-foreground/30 border-border/50 bg-gradient-to-b from-card/90 to-card/40">
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">

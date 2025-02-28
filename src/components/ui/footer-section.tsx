@@ -11,10 +11,10 @@ function Footerdemo() {
             © 2025 Sprout Recovery. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#privacy" className="transition-colors hover:text-primary">
+            <a href="/privacy-policy" className="transition-colors hover:text-primary">
               Privacy Policy
             </a>
-            <a href="#terms" className="transition-colors hover:text-primary">
+            <a href="/terms-of-service" className="transition-colors hover:text-primary">
               Terms & Conditions
             </a>
           </nav>

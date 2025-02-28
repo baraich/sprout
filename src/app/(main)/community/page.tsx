@@ -31,7 +31,7 @@ export default function CommunityPage() {
             description:
               "Join a supportive community of individuals on their recovery journey. Share experiences, find encouragement, and build meaningful connections in a safe, judgment-free space.",
             primaryAction: {
-              href: "/community/browse",
+              href: "/community",
               text: "Join Community",
               icon: (
                 <Users
@@ -41,8 +41,8 @@ export default function CommunityPage() {
               ),
             },
             secondaryAction: {
-              href: "/community/browse",
-              text: "Browse Groups",
+              href: "/dashboard",
+              text: "View Dashboard",
               icon: (
                 <MessageCircle
                   size={16}

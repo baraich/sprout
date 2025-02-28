@@ -29,8 +29,20 @@ export const topics = pgTable("topics", {
 
 export const questions = pgTable("community_questions", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  content: varchar().notNull(),
+
+  createdAt: timestamp().defaultNow(),
+  updatedAt: timestamp().$onUpdateFn(() => sql`now()`),
+
+  topicId: integer().references(() => topics.id),
 });
 
 export const replies = pgTable("community_replies", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  content: varchar().notNull(),
+
+  createdAt: timestamp().defaultNow(),
+  updatedAt: timestamp().$onUpdateFn(() => sql`now()`),
+
+  questionId: integer().references(() => questions.id),
 });
